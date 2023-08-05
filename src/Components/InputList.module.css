@@ -4,15 +4,17 @@ form{
     font-weight : bolder;
 }
 input{
-    width : 200px;
+    display : inline-block;
+    width : 180px;
     height : 20px;
     font-size : medium;
 }
 select{
-    width : 100px;
-    height : 20px;
+    width : 150px;
+    height : 30px;
 }
 .button{
+    display : inline-block;
     background-color: paleturquoise;
     width : 150px;
     height : 30px;

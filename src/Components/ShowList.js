@@ -3,46 +3,46 @@ import classes from'../Components/ShowList.module.css'
 const Showlist = (props) => {
   const allItems = props.allItems;
 
-  const deleteOrder = (itemId) => {
+  const deleteProduct = (itemId) => {
     localStorage.removeItem(itemId);
-    props.onDeleteOrder(itemId);
+    props.onDeleteProduct(itemId);
   };
-  const table1Items = allItems.filter((item) => item.chooseatable === "Table1");
-  const table2Items = allItems.filter((item) => item.chooseatable === "Table2");
-  const table3Items = allItems.filter((item) => item.chooseatable === "Table3");
+  const ElectronicItems = allItems.filter((item) => item.chooseacategory === "ElectronicItems");
+  const FoodItems = allItems.filter((item) => item.chooseacategory=== "FoodItems");
+  const SkinCareItems = allItems.filter((item) => item.chooseacategory === "SkinCareItems");
 
   return (
     <div>
-      <h1>List of Orders</h1>
+      <h1>List of Products</h1>
       <div>
-        <h2>Table 1</h2>
+        <h2>Electronic Items</h2>
         <ul>
-          {table1Items.map((item) => (
+          {ElectronicItems.map((item) => (
             <li key={item.id}>
-              {item.dish} - Rs.{item.cost}
-              <button  className={classes.buttons} onClick={()=>deleteOrder(item.id)}>Delete Order</button>
+              {item.product} - Rs.{item.cost}
+              <button  className={classes.buttons} onClick={()=>deleteProduct(item.id)}>Delete Product</button>
             </li>
           ))}
         </ul>
       </div>
       <div>
-        <h2>Table 2</h2>
+        <h2>Food Items</h2>
         <ul>
-          {table2Items.map((item) => (
+          {FoodItems.map((item) => (
             <li key={item.id}>
-              {item.dish} - Rs.{item.cost}
-              <button  className={classes.buttons} onClick={()=>deleteOrder(item.id)}>Delete Order</button>
+              {item.product} - Rs.{item.cost}
+              <button  className={classes.buttons} onClick={()=>deleteProduct(item.id)}>Delete Product</button>
             </li>
           ))}
         </ul>
       </div>
       <div>
-        <h2>Table 3</h2>
+        <h2>Skincare Items</h2>
         <ul>
-          {table3Items.map((item) => (
+          {SkinCareItems.map((item) => (
             <li key={item.id}>
-              {item.dish} - Rs.{item.cost}
-              <button className={classes.buttons} onClick={() => deleteOrder(item.id)}>Delete Order</button>
+              {item.product} - Rs.{item.cost}
+              <button className={classes.buttons} onClick={() => deleteProduct(item.id)}>Delete Product</button>
             </li>
           ))}
         </ul>

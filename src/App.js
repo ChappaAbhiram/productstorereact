@@ -21,14 +21,14 @@ function App() {
     setAllItems((prevItems) => [...prevItems, newItem]);
   };
 
-  const deleteOrder = (itemId) => {
+  const deleteProduct = (itemId) => {
     setAllItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 
   return (
     <div>
       <InputList onUpdate={updateItems} />
-      <Showlist allItems={allItems} onDeleteOrder={deleteOrder} />
+      <Showlist allItems={allItems} onDeleteProduct={deleteProduct} />
     </div>
   );
 }

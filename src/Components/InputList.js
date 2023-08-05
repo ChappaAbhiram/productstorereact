@@ -1,83 +1,83 @@
 import React, { useState } from "react";
 import classes from "../Components/InputList.module.css";
 const InputList = (props) => {
-  const [dishId, setDishId] = useState("");
-  const [dishname, setDishname] = useState("");
-  const [dishPrice, setDishPrice] = useState("");
-  const [tableNumber, setTableNumber] = useState("Table1");
+  const [productId, setproductId] = useState("");
+  const [productname, setproductname] = useState("");
+  const [productPrice, setproductPrice] = useState("");
+  const [Categorytype, setCategorytype] = useState("ElectronicItems");
 
   const formHandler = (event) => {
     event.preventDefault();
-    const newItem = {
-      id: dishId,
-      cost: dishPrice,
-      dish: dishname,
-      chooseatable: tableNumber,
+    const newProduct = {
+      id: productId,
+      cost: productPrice,
+      product: productname,
+      chooseacategory: Categorytype,
     };
-    localStorage.setItem(dishId, JSON.stringify(newItem));
-    props.onUpdate(newItem);
-    setDishId("");
-    setDishPrice("");
-    setDishname("");
-    setTableNumber("Table1");
+    localStorage.setItem(productId, JSON.stringify(newProduct));
+    props.onUpdate(newProduct);
+    setproductId("");
+    setproductPrice("");
+    setproductname("");
+    setCategorytype("ElectronicItems");
   };
 
   const idChangeHandler = (event) => {
-    setDishId(event.target.value);
+    setproductId(event.target.value);
   };
   const nameChangeHandler = (event) => {
-    setDishname(event.target.value);
+    setproductname(event.target.value);
   };
   const priceChangeHandler = (event) => {
-    setDishPrice(event.target.value);
+    setproductPrice(event.target.value);
   };
-  const TableNumberChangeHandler = (event) => {
-    setTableNumber(event.target.value);
+  const CategoryChangeHandler = (event) => {
+    setCategorytype(event.target.value);
   };
 
   return (
     <React.Fragment>
       <div className="Container">
-        <h1>Details of Order</h1>
+        <h1>Details of Product</h1>
         <form onSubmit={formHandler}>
-          <label htmlFor="dishid">Dish Unique id</label>
+          <label htmlFor="productId">Product Unique id</label>
           <input
             type="text"
-            id="dishid"
-            name="dishid"
-            value={dishId}
+            id="productId"
+            name="productId"
+            value={productId}
             onChange={idChangeHandler}
             required
           />
-          <label htmlFor="dishprice">Price</label>
+          <label htmlFor="productPrice">Selling Price</label>
           <input
             type="number"
-            id="dishprice"
-            name="dishprice"
-            value={dishPrice}
+            id="productPrice"
+            name="productPrice"
+            value={productPrice}
             onChange={priceChangeHandler}
             required
           />
-          <label htmlFor="name">Name of the Dish</label>
+          <label htmlFor="name">Name of Product</label>
           <input
             type="text"
             id="name"
             name="name"
-            value={dishname}
+            value={productname}
             onChange={nameChangeHandler}
             required
           />
-          <label>Table Number</label>
+          <label>Category</label>
           <select
-            id="tablenumber"
-            onChange={TableNumberChangeHandler}
-            value={tableNumber}
+            id="Category"
+            onChange={CategoryChangeHandler}
+            value={Categorytype}
           >
-            <option value="Table1">Table1</option>
-            <option value="Table2">Table2</option>
-            <option value="Table3">Table3</option>
+            <option value="ElectronicItems">Electronic Items</option>
+            <option value="FoodItems">Food Items</option>
+            <option value="SkinCareItems">SkinCare Items</option>
           </select>
-          <button type="submit" className={classes.button}>Place Order</button>
+          <button type="submit" className={classes.button}>Add Product</button>
         </form>
       </div>
     </React.Fragment>
