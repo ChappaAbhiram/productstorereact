@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body{
+  background-image : url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffh260%2Fback_pic%2F04%2F13%2F97%2F95581eef02e5dae.jpg&tbnid=zAnCHWZsvhPXaM&vet=12ahUKEwicgZLcj8WAAxW-6DgGHQ9PByAQMygSegUIARD-AQ..i&imgrefurl=https%3A%2F%2Fpngtree.com%2Ffree-backgrounds-photos%2Frestaurant&docid=N_yuNZdad-t4eM&w=360&h=360&q=restaurant%20background%20images%20for%20website%20light%20color&ved=2ahUKEwicgZLcj8WAAxW-6DgGHQ9PByAQMygSegUIARD-AQ")
+}

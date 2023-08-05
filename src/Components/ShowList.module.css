@@ -1,0 +1,9 @@
+.buttons{
+    margin-left : 20px;
+    float : none;
+    height : 30px;
+    background-color : lightseagreen
+}
+li{
+    font-weight : bold;
+}
